@@ -1,0 +1,135 @@
+// If you want to use font-size-rem mixin:
+// @mixin font-size-rem($rem, $lh: 1.25) {
+// 	font-size: ($rem * 10) + px;
+// 	font-size: #{$rem}rem;
+// 	line-height: ($rem * 10 * $lh) + px;
+// }
+
+.team-block {
+    $root: '.team-block';
+
+    padding-bottom: 60px;
+
+    @include e('image-wrapper') {
+        position: relative;
+        overflow: hidden;
+        width: 265px;
+        height: 265px;
+        margin: 0 auto;
+        background-color: #ccc; // Put this in main _colors.scss file
+
+        .team-block__image--active {
+            background-color: $color-dark;
+        }
+
+        @include mq($until: wide) {
+            width: 212px;
+            height: 265px;
+        }
+
+        @include mq($until: desktop) {
+            width: 265px;
+            height: 265px;
+        }
+    }
+
+    @include e('arrow') {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 133px solid #F8F9FB; // Put this in main _colors.scss file
+        border-right: 133px solid #F8F9FB; // Put this in main _colors.scss file
+        border-top: 40px solid transparent;
+        bottom: 0;
+
+        @include mq($until: wide) {
+            border-left-width: 111px;
+            border-right-width: 111px;
+        }
+
+        @include mq($until: desktop) {
+            border-left-width: 133px;
+            border-right-width: 133px;
+        }
+    }
+
+    @include e('image') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-filter: grayscale(70%);
+	    filter: grayscale(70%);
+
+        @include m('first') {
+            top: -550px;
+            -webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
+        }
+
+        @include m('second') {
+            top: -825px;
+            -webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
+        }
+
+        @include m('third') {
+            top: -1100px;
+            -webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
+        }
+
+        @include m('active') {
+            top: -275px;
+            -webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
+
+            &:hover {
+                &#{$root}__image--first {
+                    top: -550px;
+                }
+
+                &#{$root}__image--second {
+                    top: -825px;
+                }
+
+                &#{$root}__image--third {
+                    top: -1100px;
+                }
+            }
+        }
+
+        @include mq($until: wide) {
+            left: -30px;
+        }
+
+        @include mq($until: desktop) {
+            left: 0;
+        }
+    }
+
+    @include e('name') {
+        margin-bottom: 0;
+        font-size: 22.5px;
+        font-size: 2.25rem;
+        line-height: 28.125px;
+        // @include font-size-rem(2.25, 1.25);
+    }
+
+    @include e('position') {
+        color: #4d4d4d; // Put this in main _colors.scss file
+        font-family: "Open Sans", sans-serif;
+        // @include font-size-rem(1.2, 1);
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 12px;
+        margin: 5px 0 0 0;
+        text-transform: uppercase;
+    }
+
+    @include e('icon-fb') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff; // Put this in main _colors.scss file
+    }
+}
