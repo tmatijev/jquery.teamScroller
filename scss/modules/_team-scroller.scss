@@ -41,8 +41,8 @@
         position: absolute;
         width: 0;
         height: 0;
-        border-left: 133px solid #F8F9FB; // Put this in main _colors.scss file
-        border-right: 133px solid #F8F9FB; // Put this in main _colors.scss file
+        border-left: 133px solid #fff; // Put this in main _colors.scss file
+        border-right: 133px solid #fff; // Put this in main _colors.scss file
         border-top: 40px solid transparent;
         bottom: 0;
 
@@ -103,7 +103,7 @@
         }
 
         @include mq($until: wide) {
-            left: -30px;
+            left: -26px;
         }
 
         @include mq($until: desktop) {
