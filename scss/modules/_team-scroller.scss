@@ -5,6 +5,10 @@
 // 	line-height: ($rem * 10 * $lh) + px;
 // }
 
+.test {
+    z-index: 123;
+}
+
 .team-block {
     $root: '.team-block';
 
@@ -19,7 +23,7 @@
         background-color: #ccc; // Put this in main _colors.scss file
 
         .team-block__image--active {
-            background-color: $color-dark;
+            background-color: #000; // Put this in main _colors.scss file
         }
 
         @include mq($until: wide) {
